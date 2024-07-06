@@ -1,0 +1,30 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 120px;
+  width: 100vw;
+  background-color: #4056A1;
+  color: #FFFFFF;
+}
+
+#logo{
+  font-family: "Bungee", sans-serif;
+  font-size: 1.5em;
+  margin: 1.5em;
+}
+
+#user-input{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 300;
+  margin: 1.5em;
+
+}
+
+.fa-angles-down{
+  color: rgb(204, 4, 4);
+}
