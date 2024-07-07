@@ -9,13 +9,13 @@
   color: #FFFFFF;
 }
 
-#logo{
+#nav-title{
   font-family: "Bungee", sans-serif;
   font-size: 1.5em;
   margin-left: 1.5em;
 }
 
-#user-input{
+#nav-tweet-btn{
   display: flex;
   flex-direction: column;
   align-items: center;
