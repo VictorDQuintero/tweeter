@@ -38,5 +38,5 @@ the same background colour as the <body> element */
 main {
   width: 90%;
   background-color: inherit;
-  
+  margin: 0 auto;  
 }
