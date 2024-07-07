@@ -1,0 +1,21 @@
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center; 
+  background-color: orange;
+  background-image: url('/images/paper-3.png'); /* Replace with your image path */
+  background-repeat: no-repeat; /* Ensures the image does not repeat */
+  background-size: cover; /* Resizes the image to cover the entire element */
+}
+
+header img {
+  border-radius: 50%; /* Optional: gives the avatar a circular shape */
+  width: 200px; /* Adjust as necessary */
+  height: 200px; /* Adjust as necessary */
+}
+
+header h2 {
+  margin-top: 10px; /* Creates space between the avatar and the name */
+}
