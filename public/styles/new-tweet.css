@@ -58,6 +58,6 @@
   color: #3d3d3d;
 }
 
-.new-tweet .counter-negative {
-  color: red;
+.new-tweet .counter-negative { 
+  color: red; /* when counter is negative counter turns red */
 }
