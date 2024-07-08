@@ -55,5 +55,9 @@
 .new-tweet .counter {
   /* font-size: 20px; */
   font-weight: bold;
-  color: #3d3d3d; /* Subtle color for the character counter */
+  color: #3d3d3d;
+}
+
+.new-tweet .counter-negative {
+  color: red;
 }
