@@ -2,6 +2,7 @@
 /* Main form container */
 .new-tweet {
   margin-top: 20px;
+  margin-bottom: 20px;
   padding: 20px;
   background-color: #f0f0f0; /* Light grey background to distinguish the form */
   border-radius: 10px; /* Rounded corners for a softer look */
