@@ -1,0 +1,60 @@
+
+/* Main form container */
+.new-tweet {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f0f0f0; /* Light grey background to distinguish the form */
+  border-radius: 10px; /* Rounded corners for a softer look */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  font-family: "Source Sans 3", sans-serif; /* Ensure consistent font */
+}
+
+.new-tweet form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-tweet label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Text area styling */
+.new-tweet textarea {
+  resize: none; /* Prevent users from resizing */
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 16px;
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 5px; /* Slight rounding */
+  
+}
+
+/* Div containing button and counter */
+.new-tweet div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  border-top: 4px solid #3d3d3d;
+  padding-top: 10px;
+}
+
+.new-tweet button {
+  background-color: #4056A1;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  font-family: 'Bungee';
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.new-tweet .counter {
+  /* font-size: 20px; */
+  font-family: 'Bungee';
+  font-weight: bold;
+  color: #3d3d3d; /* Subtle color for the character counter */
+}
