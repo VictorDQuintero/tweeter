@@ -5,6 +5,32 @@
  */
 
 $(document).ready(function() {
+
+  $('#post-tweet').on('submit', function(event) {
+    event.preventDefault();  // Prevent the default form submission
+
+    // Serialize the form data
+    const serializedData = $(this).serialize();
+
+    // Log the serialized data to see what it looks like
+    console.log(serializedData);
+
+    // AJAX POST request to send the serialized data
+    $.ajax({
+      type: 'POST',
+      url: '/tweets',
+      data: serializedData,
+      success: function(response) {
+        // Handle the success response
+        console.log('Tweet successfully posted:', response);
+      },
+      error: function(error) {
+        // Handle the error response
+        console.log('Error posting tweet:', error);
+      }
+    });
+  });
+  
   const data = [
     {
       "user": {
