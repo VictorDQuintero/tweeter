@@ -29,32 +29,31 @@ article.tweet {
   height: auto;
 }
 
-.tweet .top-left {
+.tweet .user-info {
   display: flex;
   align-items: center;
 }
 
-.tweet .top-left img {
+.tweet .user-info img {
   border-radius: 50%;
   width: 70px; /* Reduce image size */
   height: 70px; /* Reduce image size */
   margin-right: 5px; /* Reduce margin */
 }
 
-.tweet .top-right {
+.tweet .user-handle {
   font-size: 0.85em;
   color: #657786;
 }
 
 /* Ensure no extra margin/padding on all elements inside */
-.tweet .top-left,
-.tweet .top-right,
-.tweet p {
+.tweet .user-info,
+.tweet .user-handle {
   margin: 0;
   padding: 0;
 }
 
-.tweet-text {
+.tweet .tweet-content {
   margin: 10px 0;
   padding: 0 10px 20px 20px;
   font-size: 1em;
@@ -73,7 +72,7 @@ article.tweet {
   
 }
 
-.tweet footer span {
+.tweet footer .created-at {
   margin: 0 0 0 50px;
 }
 
@@ -81,7 +80,7 @@ article.tweet {
   margin: 20px;
 }
 
-.tweet footer div {
+.tweet footer .tweet-links {
   display: flex;
   gap: 15px;
   margin: 0 20px 0 0; 
