@@ -35,11 +35,6 @@ const renderTweets = function(tweets) {
     const $tweet = createTweetElement(tweetData);
     $('#tweets-container').append($tweet);
   });
-  // for (const tweetData of tweets){
-  //   const $tweet = createTweetElement(tweetData);
-  //   $('#tweets-container').append($tweet);
-  // }
-
 }
 
 const createTweetElement = function(tweetData){
@@ -66,18 +61,11 @@ const createTweetElement = function(tweetData){
       </footer>
     </article>
   `);
-  console.log("Created tweet element: ", $tweet);
- console.log("Is jQuery object: ", $tweet instanceof jQuery);
-  return $tweet;
-     
+  
+  return $tweet;     
 };
 
-// Test / driver code (temporary)
- // to see what it looks like
- 
 
 renderTweets(data);
-
-
 
 });
