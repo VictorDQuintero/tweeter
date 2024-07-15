@@ -41,8 +41,9 @@ const renderTweets = function(tweets) {
 }
 
 const createTweetElement = function(tweetData){
-      // Your code here
-    const $tweet = $(`
+    
+  const formattedTime = timeago.format(tweetData.created_at);
+  const $tweet = $(`
     <article class="tweet">
       <header>
         <div class="user-info">
@@ -55,7 +56,7 @@ const createTweetElement = function(tweetData){
         ${tweetData.content.text}
       </div>
       <footer>
-        <span class="created-at">${tweetData.created_at}</span>
+        <span class="created-at">${formattedTime}</span>
         <div class="tweet-links">
             <i class="fa-solid fa-flag"></i>
             <i class="fa-solid fa-retweet"></i>
