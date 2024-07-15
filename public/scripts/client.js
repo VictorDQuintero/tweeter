@@ -31,30 +31,7 @@ $(document).ready(function() {
     });
   });
   
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
+ // remove tweet object
 
 const renderTweets = function(tweets) {
   tweets.forEach((tweetData) => { 
@@ -91,7 +68,18 @@ const createTweetElement = function(tweetData){
   return $tweet;     
 };
 
-
-renderTweets(data);
-
+const loadTweets = function(){
+  $('#post-tweet').on('submit', function() {
+$.ajax({
+  type: 'GET', // The HTTP method to use for the request
+  url: '/tweets', // The URL to which the request is sent
+  dataType: 'json', // The type of data you're expecting back from the server
+  success: renderTweets, // Callback function executed if the request succeeds
+  error: function(error) { // Callback function executed if the request fails
+    console.log('Error retrieving data:', error);
+  }
+});
+});
+};
+loadTweets();
 });
