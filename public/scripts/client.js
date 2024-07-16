@@ -5,8 +5,8 @@
  */
 
 const renderTweets = function(tweets) {
-  
-  $('#tweets-container').empty();
+
+  // $('#tweets-container').empty(); // clears the existing tweet
 
   tweets.forEach((tweetData) => { 
     const $tweet = createTweetElement(tweetData);
