@@ -61,12 +61,12 @@ const isTweetValid = function(tweetText){
   const maxTweetLength = 140;
 
   if(!tweetText){
-    alert("Please fill your tweet.");
+    displayErrorMessage("Tweets must not be empty");
     return false;
   }
 
   if(tweetText.length > maxTweetLength){
-    alert(`Tweet must not be longer than ${maxTweetLength} characters.`)
+    displayErrorMessage(`Tweet must not be longer than ${maxTweetLength} characters.`)
     return false;
   }
 
@@ -79,6 +79,15 @@ const escape = function (str) {
   return div.innerHTML;
 };
 
+const displayErrorMessage = function (message){
+  $('.error-message').text(message).show(); // Update and show the error message container
+};
+
+const clearErrorMessage = function() {
+  $('.error-message').hide(); // Hide the error message container
+};
+
+
 $(document).ready(function() {
 
 loadTweets();
@@ -87,7 +96,10 @@ loadTweets();
     event.preventDefault();  // Prevent the default form submission
 
     const tweetText = $("#tweet-text").val().trim();
-           
+
+     // Clear previous error message
+     clearErrorMessage();
+      
     // Validate tweet
     if (!isTweetValid(tweetText)) {
       return; // If the tweet is invalid, stop the form submission
