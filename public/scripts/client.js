@@ -57,6 +57,21 @@ $.ajax({
 
 };
 
+const isTweetValid = function(tweetText){
+  const maxTweetLength = 140;
+
+  if(!tweetText){
+    alert("Please fill your tweet.");
+    return;
+  }
+
+  if(tweetText.length > maxTweetLength){
+    alert(`Tweet must not be longer than ${maxTweetLength} characters.`)
+    return;
+  }
+
+}
+
 $(document).ready(function() {
 
 loadTweets();
@@ -64,21 +79,11 @@ loadTweets();
   $('#post-tweet').on('submit', function(event) {
     event.preventDefault();  // Prevent the default form submission
 
-    const tweetText = $("#tweet-text").val();
-    const maxTweetLength = 140;
-    
+    const tweetText = $("#tweet-text").val().trim();
+        
     // Validate tweet
-
-    if(!tweetText){
-      alert("Please fill your tweet.");
-      return;
-    }
-
-    if(tweetText.length > maxTweetLength){
-      alert(`Tweet must not be longer than ${maxTweetLength} characters.`)
-      return;
-    }
-
+    isTweetValid(tweetText);
+    
     // Serialize the form data
     const serializedData = $(this).serialize();
 
@@ -91,9 +96,6 @@ loadTweets();
       url: '/tweets',
       data: serializedData,
       success: function(response) {
-        // Handle the success response
-        console.log('Tweet successfully posted:', response);
-
         // Handle the success response
         console.log('Tweet successfully posted:', response);
 
