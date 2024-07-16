@@ -64,6 +64,21 @@ loadTweets();
   $('#post-tweet').on('submit', function(event) {
     event.preventDefault();  // Prevent the default form submission
 
+    const tweetText = $("#tweet-text").val();
+    const maxTweetLength = 140;
+    
+    // Validate tweet
+
+    if(!tweetText){
+      alert("Please fill your tweet.");
+      return;
+    }
+
+    if(tweetText.length > maxTweetLength){
+      alert(`Tweet must not be longer than ${maxTweetLength} characters.`)
+      return;
+    }
+
     // Serialize the form data
     const serializedData = $(this).serialize();
 
