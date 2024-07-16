@@ -15,7 +15,7 @@ const renderTweets = function(tweets) {
 }
 
 const createTweetElement = function(tweetData){
-    
+  
   const formattedTime = timeago.format(tweetData.created_at);
   const $tweet = $(`
     <article class="tweet">
@@ -27,7 +27,7 @@ const createTweetElement = function(tweetData){
         <span class="user-handle">${tweetData.user.handle}</span>
       </header>
       <div class="tweet-content">
-        ${tweetData.content.text}
+        ${escape(tweetData.content.text)}
       </div>
       <footer>
         <span class="created-at">${formattedTime}</span>
@@ -62,15 +62,22 @@ const isTweetValid = function(tweetText){
 
   if(!tweetText){
     alert("Please fill your tweet.");
-    return;
+    return false;
   }
 
   if(tweetText.length > maxTweetLength){
     alert(`Tweet must not be longer than ${maxTweetLength} characters.`)
-    return;
+    return false;
   }
 
+  return true;
 }
+
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 $(document).ready(function() {
 
@@ -80,9 +87,11 @@ loadTweets();
     event.preventDefault();  // Prevent the default form submission
 
     const tweetText = $("#tweet-text").val().trim();
-        
+           
     // Validate tweet
-    isTweetValid(tweetText);
+    if (!isTweetValid(tweetText)) {
+      return; // If the tweet is invalid, stop the form submission
+    }
     
     // Serialize the form data
     const serializedData = $(this).serialize();
@@ -91,6 +100,7 @@ loadTweets();
     console.log(serializedData);
 
     // AJAX POST request to send the serialized data
+    
     $.ajax({
       type: 'POST',
       url: '/tweets',
@@ -112,9 +122,6 @@ loadTweets();
       }
     });
   });
-  
- // remove tweet object
-
-
+ 
 
 });
