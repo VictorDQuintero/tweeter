@@ -5,6 +5,9 @@
  */
 
 const renderTweets = function(tweets) {
+  
+  $('#tweets-container').empty();
+
   tweets.forEach((tweetData) => { 
     const $tweet = createTweetElement(tweetData);
     $('#tweets-container').prepend($tweet);
@@ -75,6 +78,16 @@ loadTweets();
       success: function(response) {
         // Handle the success response
         console.log('Tweet successfully posted:', response);
+
+        // Handle the success response
+        console.log('Tweet successfully posted:', response);
+
+        // Clear the textarea and reset the character counter
+        $('#tweet-text').val(''); // Clear the textarea
+        $('.counter').text('140'); // Reset the character counter
+
+        // Reload tweets to include the new tweet
+        loadTweets();
       },
       error: function(error) {
         // Handle the error response
