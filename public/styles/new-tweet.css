@@ -61,3 +61,13 @@
 .new-tweet .counter-negative { 
   color: red; /* when counter is negative counter turns red */
 }
+
+.error-message{
+  border: 2px solid red;
+  padding: 5px 20px;
+  margin-top: 10px;
+  color: whitesmoke;
+  background-color: red;
+  font-weight: bold;
+  display: none; /* Hide the error message container initially */
+}
