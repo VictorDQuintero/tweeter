@@ -4,35 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function() {
-
-  $('#post-tweet').on('submit', function(event) {
-    event.preventDefault();  // Prevent the default form submission
-
-    // Serialize the form data
-    const serializedData = $(this).serialize();
-
-    // Log the serialized data to see what it looks like
-    console.log(serializedData);
-
-    // AJAX POST request to send the serialized data
-    $.ajax({
-      type: 'POST',
-      url: '/tweets',
-      data: serializedData,
-      success: function(response) {
-        // Handle the success response
-        console.log('Tweet successfully posted:', response);
-      },
-      error: function(error) {
-        // Handle the error response
-        console.log('Error posting tweet:', error);
-      }
-    });
-  });
-  
- // remove tweet object
-
 const renderTweets = function(tweets) {
   tweets.forEach((tweetData) => { 
     const $tweet = createTweetElement(tweetData);
@@ -70,7 +41,7 @@ const createTweetElement = function(tweetData){
 };
 
 const loadTweets = function(){
-  $('#post-tweet').on('submit', function() {
+  
 $.ajax({
   type: 'GET', // The HTTP method to use for the request
   url: '/tweets', // The URL to which the request is sent
@@ -80,7 +51,40 @@ $.ajax({
     console.log('Error retrieving data:', error);
   }
 });
-});
+
 };
+
+$(document).ready(function() {
+
 loadTweets();
+
+  $('#post-tweet').on('submit', function(event) {
+    event.preventDefault();  // Prevent the default form submission
+
+    // Serialize the form data
+    const serializedData = $(this).serialize();
+
+    // Log the serialized data to see what it looks like
+    console.log(serializedData);
+
+    // AJAX POST request to send the serialized data
+    $.ajax({
+      type: 'POST',
+      url: '/tweets',
+      data: serializedData,
+      success: function(response) {
+        // Handle the success response
+        console.log('Tweet successfully posted:', response);
+      },
+      error: function(error) {
+        // Handle the error response
+        console.log('Error posting tweet:', error);
+      }
+    });
+  });
+  
+ // remove tweet object
+
+
+
 });
