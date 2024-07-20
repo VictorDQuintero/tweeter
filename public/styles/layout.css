@@ -35,8 +35,15 @@ body {
 center aligned to the body
 the same background colour as the <body> element */
 
+#site-container{
+  display: flex;
+  flex-direction: row;
+ width: 100%;
+}
+
 main {
   width: 90%;
   background-color: inherit;
   margin: 0 auto;  
 }
+
