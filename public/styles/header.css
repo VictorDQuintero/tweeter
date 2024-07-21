@@ -6,10 +6,11 @@ header {
   justify-content:center;
   align-items: center; 
   background-color: orange;
-  background-image: url('/images/paper-3.png'); /* Replace with your image path */
+  background-image: url('/images/paper-3.png'); 
   background-repeat: no-repeat; /* Ensures the image does not repeat */
   background-size: cover; /* Resizes the image to cover the entire element */
-  margin: 100px 100px 25px 25px;;
+  margin: 170px 100px 25px 50px;
+  color: #f4f1ec;
 }
 
 header img {
@@ -18,6 +19,15 @@ header img {
   height: 200px; /* Adjust as necessary */
 }
 
-header h2 {
+header p {
   margin-top: 10px; /* Creates space between the avatar and the name */
+  font-size: 1.2em;
+}
+
+@media screen and (min-width: 728px) and (max-width: 1023px){
+  header{
+    width: 100%;
+    margin: 90px 0;
+    height: 350px;
+  }
 }
