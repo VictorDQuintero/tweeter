@@ -24,7 +24,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-flow: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 /*
@@ -38,12 +40,20 @@ the same background colour as the <body> element */
 #site-container{
   display: flex;
   flex-direction: row;
- width: 100%;
+  width: 100%;
 }
 
 main {
   width: 90%;
   background-color: inherit;
   margin: 0 auto;  
+}
+
+@media screen and (min-width: 728px) and (max-width: 1023px){
+  #site-container{
+    
+    flex-direction: column;
+    
+}
 }
 
