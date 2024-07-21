@@ -8,13 +8,13 @@ const renderTweets = function(tweets) {
 
   $('#tweets-container').empty(); // clears tweets container
 
-  tweets.forEach((tweetData) => { 
+  tweets.forEach((tweetData) => {
     const $tweet = createTweetElement(tweetData);
     $('#tweets-container').prepend($tweet);
   });
-}
+};
 
-const createTweetElement = function(tweetData){
+const createTweetElement = function(tweetData) {
   
   const formattedTime = timeago.format(tweetData.created_at);
   const $tweet = $(`
@@ -40,46 +40,46 @@ const createTweetElement = function(tweetData){
     </article>
   `);
   
-  return $tweet;     
+  return $tweet;
 };
 
-const loadTweets = function(){
+const loadTweets = function() {
   
-$.ajax({
-  type: 'GET', // The HTTP method to use for the request
-  url: '/tweets', // The URL to which the request is sent
-  dataType: 'json', // The type of data you're expecting back from the server
-  success: renderTweets, // Callback function executed if the request succeeds
-  error: function(error) { // Callback function executed if the request fails
-    console.log('Error retrieving data:', error);
-  }
-});
+  $.ajax({
+    type: 'GET', // The HTTP method to use for the request
+    url: '/tweets', // The URL to which the request is sent
+    dataType: 'json', // The type of data you're expecting back from the server
+    success: renderTweets, // Callback function executed if the request succeeds
+    error: function(error) { // Callback function executed if the request fails
+      console.log('Error retrieving data:', error);
+    }
+  });
 
 };
 
-const isTweetValid = function(tweetText){
+const isTweetValid = function(tweetText) {
   const maxTweetLength = 140;
 
-  if(!tweetText){
+  if (!tweetText) {
     displayErrorMessage("Tweets must not be empty");
     return false;
   }
 
-  if(tweetText.length > maxTweetLength){
-    displayErrorMessage(`Tweet must not be longer than ${maxTweetLength} characters.`)
+  if (tweetText.length > maxTweetLength) {
+    displayErrorMessage(`Tweet must not be longer than ${maxTweetLength} characters.`);
     return false;
   }
 
   return true;
-}
+};
 
-const escape = function (str) {
+const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
-const displayErrorMessage = function (message){
+const displayErrorMessage = function(message) {
   $('.error-message').text(message).show(); // Update and show the error message container
 };
 
@@ -90,15 +90,15 @@ const clearErrorMessage = function() {
 
 $(document).ready(function() {
 
-loadTweets();
+  loadTweets();
 
   $('#post-tweet').on('submit', function(event) {
     event.preventDefault();  // Prevent the default form submission
 
     const tweetText = $("#tweet-text").val().trim();
 
-     // Clear previous error message
-     clearErrorMessage();
+    // Clear previous error message
+    clearErrorMessage();
       
     // Validate tweet
     if (!isTweetValid(tweetText)) {
