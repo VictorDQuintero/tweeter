@@ -27,7 +27,7 @@ const createTweetElement = function(tweetData){
         <span class="user-handle">${tweetData.user.handle}</span>
       </header>
       <div class="tweet-content">
-        ${escape(tweetData.content.text)}
+        ${tweetData.content.text}
       </div>
       <footer>
         <span class="created-at">${formattedTime}</span>

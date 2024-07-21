@@ -1,9 +1,10 @@
 
 /* Main form container */
 .container {
-  margin-top: 170px;
-  margin-bottom: 20px;
-  padding: 20px;
+  margin-top: 7em;
+  margin-bottom: 0.8em;
+  margin-right: 1.2em;
+  padding: 0.8em;
   background-color: #f0f0f0; /* Light grey background to distinguish the form */
   border-radius: 10px; /* Rounded corners for a softer look */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -64,16 +65,22 @@
 
 .error-message{
   border: 2px solid red;
-  padding: 5px 20px;
+  padding: 0.6em 2em 0.6em 8em;;
   margin-top: 10px;
+  margin-bottom: 20px;
   color: whitesmoke;
   background-color: red;
   font-weight: bold;
   display: none; /* Hide the error message container initially */
+  
 }
 
 @media screen and (min-width: 728px) and (max-width: 1023px){
   .container{
     margin-top: 0;
+  }
+
+  .error-message{
+    padding-left: 11.5em;
   }
 }
