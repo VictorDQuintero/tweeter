@@ -24,3 +24,7 @@ As of now the project has the capability of creating posts and they will be disp
 Tweets may not be empty or longer than 140 characters.
 
 ## Screenshots
+
+!["How Tweeter looks on desktop screens"](https://github.com/VictorDQuintero/tweeter/blob/master/docs/Desktop-screenshot.png?raw=true)
+!["How Tweeter looks on tablets"](https://github.com/VictorDQuintero/tweeter/blob/master/docs/Tablet-Screenshot.png?raw=true)
+!["Example of a post with new tweet text box"](https://github.com/VictorDQuintero/tweeter/blob/master/docs/tweet-box.png?raw=true)
