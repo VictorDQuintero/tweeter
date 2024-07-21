@@ -15,7 +15,7 @@ header {
 }
 
 header img {
-  border-radius: 50%; /* Optional: gives the avatar a circular shape */
+  border-radius: 50%; /*Gives the avatar a circular shape */
   width: 200px; /* Adjust as necessary */
   height: 200px; /* Adjust as necessary */
 }
